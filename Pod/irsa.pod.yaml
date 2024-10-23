@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-irsa
+spec:
+  serviceAccountName: demo-sa
+  containers:
+    - command:
+        - sleep
+        - "3600"
+      image: public.ecr.aws/nginx/nginx:1.21
+      name: debug-network-container
